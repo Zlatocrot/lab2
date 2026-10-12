@@ -1,45 +1,60 @@
-
-
-#define _CRT_SECURE_NO_DEPRECATE
-#include <stdio.h>
-#include <stdlib.h>
+﻿#include <stdio.h>
 #include <locale.h>
-#include <windows.h>
-
-
-void task1()
-{
-	printf("123\n");
-	printf("1\n2\n3\n");
-	printf("1\n\t2\n\t\t3\n");
-	printf("%d\n\t %d\n\t\t %d\n\t\t\t %d\n", 1, 2, 3, 4);
-	printf("%10.3f\n ", 12.234657);
-	printf("%8.5f\n ", 12.234657);
-	printf("Остаток от деления %d на %d равен %d\n ", 5, 2, 5 % 2);
-	printf("Остаток от деления %d на %d равен %d\n ", 7, 5, 7 % 5);
-	printf("если умножить %d на %d то получим %d\n ", 7, 5, 7 * 5);
-	printf("%d разделить %d равно %d\n ", 5., 2000000., 5. / 2000000);
-	printf("%f разделить %f равно %f\n ", 5., 2000000., 5. / 2000000);
-	printf("%g разделить %g равно %g\n ", 5., 2000000., 5. / 2000000);
-	printf("%e разделить %e равно %e\n ", 5., 2000000., 5. / 2000000);
+void prac1();
+void prac2();
+void prac3();
+void dz_15();
+int main() {
+	setlocale(LC_ALL, "Ru");
+	printf("Практика 2\n");
+	printf("\nЗадание 1\n");
+	prac1();
+	printf("\nЗадание 2\n");
+	prac2();
+	printf("\nЗадание 3\n");
+	prac3();
+	printf("\nДомашнее задание\n");
+	dz_15();
+	return 0;
 }
-
-
-void task2()
+void prac1()
+{
+	printf("ЗАДАНИЕ 1\n");
+	printf("123\n\n ");
+	printf("ЗАДАНИЕ 2\n");
+	printf("1\n2\n3\n\n ");
+	printf("ЗАДАНИЕ 3\n");
+	printf("1\n\t2\n\t\t3\n\n ");
+	printf("ЗАДАНИЕ 4\n");
+	printf("%1d\n%2d\n%3d\n%4d\n\n ", 1, 2, 3, 4);
+	printf("ЗАДАНИЕ 5\n");
+	printf("%10.3f\n\n ", 12.234657);
+	printf("ЗАДАНИЕ 6\n");
+	printf("%10.5f\n\n ", 12.234657);
+	printf("ЗАДАНИЕ 7\n");
+	printf("Остаток от деления %d на %d равен %d\n\n ", 5, 2, 5 % 2);
+	printf("ЗАДАНИЕ 8\n");
+	printf("деление %.0f на %.0f равно %.1f\n\n ", 7.0, 5.0, 7.0 / 5.0);
+	printf("ЗАДАНИЕ 9\n");
+	printf("умножение %.0f на %.0f равно %.0f\n\n ", 2000.0, 4.0, 2000.0 * 4.0);
+	printf("ЗАДАНИЕ 10\n");
+	printf("%d разделить на %d равно %d\n ", 5, 2000000, 5 / 2000000);
+	printf("%f разделить на %f равно %f\n ", 5., 2000000., 5. / 2000000);
+	printf("%g разделить на %g равно %g\n ", 5., 2000000., 5. / 2000000);
+	printf("%e разделить на %e равно %e\n ", 5., 2000000., 5. / 2000000);
+}
+void prac2()
 {
 	int N, K;
-	N = 5;
-	K = 6;
-
+	N = 8;
+	K = 50;
 	printf("Сейчас %d часов %d минут 00 секунд\n", N, K);
-	printf("Идёт %d минута суток\n", N);
-	printf("До полуночи осталось %d часов и %d минут\n", N, K);
-	printf("С 8.00 прошло %d секунд\n", N);
-	printf("Текущий час = %7.2f суток и текущая минута = %7.2f часа\n", N / 24., K / 60.);
+	printf("Идет %d минута суток\n", N * 60 + K);
+	printf("До полуночи осталось %d часов и %d минут\n", 24 - N - 1, 60 - K);
+	printf("С 8.00 прошло %d секунд\n", K * 60);
+	printf("Текущий час  = %.2f суток  и текущая минута =  %.2f часа\n", N / 24., K / 60.);
 }
-
-
-void task3()
+void prac3()
 {
 	float L = 13333.0;
 	float n = 4.0;
@@ -48,9 +63,7 @@ void task3()
 	m = 6;
 	printf("Дано:\n\t\t %7.0f\n\t\t %7.0f\n\t\t __________\nОтвет:\n\t\t +%0*.*f\n\n\n", n, L, k, m, n / L);
 }
-
-
-void taskdz_15()
+void dz_15()
 {
 	float S, X, L;
 	float stoimost;
@@ -61,21 +74,4 @@ void taskdz_15()
 
 	stoimost = (S / L) * X;
 	printf("Грей заплатил %d золотых за парус площадью %d и длиной рулона %d при стоимости %d за метр\n", stoimost, S, L, X);
-}
-
-
-int main()
-{
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	setlocale(LC_ALL, ".UTF-8");
-
-	task1();
-	task2();
-	task3();
-	taskdz_15();
-
-	system("pause");
-
-	return 0;
 }
